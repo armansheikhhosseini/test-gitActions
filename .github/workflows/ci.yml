@@ -27,6 +27,3 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-  publish:   # 👈 now inside jobs
-    needs: build
-
