@@ -24,10 +24,18 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Build and push Docker image
+      - name: Build and push Docker image (no Dockerfile)
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
           image: armansheikhhosseini/test-java
           registry: docker.io
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+          tags: latest,${{ github.sha }}
+          # Inline Dockerfile instructions
+          dockerfile: |
+            FROM openjdk:8-jre-alpine
+            WORKDIR /usr/app
+            COPY build/libs/*.jar app.jar
+            EXPOSE 8080
+            ENTRYPOINT ["java", "-jar", "app.jar"]
