@@ -8,10 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -26,4 +23,12 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
+        
+      - name: Build and push docker image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+          image: armansheikhhosseini/test-java
+          registry: docker.io
+
+        
 
