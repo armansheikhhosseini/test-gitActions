@@ -6,15 +6,7 @@ This repository demonstrates a complete GitOps workflow using ArgoCD for continu
 
 ### ArgoCD Dashboard
 ![ArgoCD Dashboard](images/argocd-dashboard.png)
-*ArgoCD dashboard showing application sync status and health*
-
-### Application Topology
-![Application Topology](images/argocd-topology.png)  
-*ArgoCD application topology view showing Kubernetes resources*
-
-### Running Application
-![Running Application](images/application-running.png)
-*Java Spring Boot application running successfully*
+*ArgoCD dashboard showing healthy application with synchronized Kubernetes resources*
 
 ## 🏗️ Architecture Overview
 
