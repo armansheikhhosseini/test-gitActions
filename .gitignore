@@ -1,5 +1,45 @@
+# OS files
 .DS_Store
-.idea/*
-.gradle/*
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Gradle
+.gradle/
 out/
 build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Logs
+*.log
+logs/
+
+# Java
+*.jar
+*.war
+*.ear
+*.class
+
+# Kubernetes
+.kubeconfig
+
+# Docker
+.docker/
+
+# Secrets (never commit these!)
+secrets.yaml
+*.secret
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Test results
+target/
+test-results/

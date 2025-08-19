@@ -1,0 +1,50 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-argo-application
+  namespace: argocd
+  labels:
+    app: myapp
+    environment: dev
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/armansheikhhosseini/test-gitActions.git
+    targetRevision: HEAD
+    path: dev
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myappmin
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+
+    automated:
+      selfHeal: true
+      prune: true
+
+  # Optional: Ignore differences in certain fields
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/replicas
+
+  # Optional: Define sync windows
+  # syncPolicy:
+  #   syncOptions:
+  #     - CreateNamespace=true
+  #   automated:
+  #     selfHeal: true
+  #     prune: true
+  #   retry:
+  #     limit: 5
+  #     backoff:
+  #       duration: 5s
+  #       factor: 2
+  #       maxDuration: 3m
