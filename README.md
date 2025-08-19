@@ -2,6 +2,20 @@
 
 This repository demonstrates a complete GitOps workflow using ArgoCD for continuous deployment of a Java Spring Boot application on Kubernetes.
 
+## 📸 Screenshots
+
+### ArgoCD Dashboard
+![ArgoCD Dashboard](images/argocd-dashboard.png)
+*ArgoCD dashboard showing application sync status and health*
+
+### Application Topology
+![Application Topology](images/argocd-topology.png)  
+*ArgoCD application topology view showing Kubernetes resources*
+
+### Running Application
+![Running Application](images/application-running.png)
+*Java Spring Boot application running successfully*
+
 ## 🏗️ Architecture Overview
 
 ```
@@ -93,6 +107,10 @@ kubectl port-forward svc/myapp-service -n myappmin 8080:8080
 ```
 
 ## 🛠️ Development Workflow
+
+### GitHub Actions CI/CD Pipeline
+![GitHub Actions Pipeline](images/github-actions-pipeline.png)
+*Automated CI/CD pipeline building and pushing Docker images*
 
 ### 1. Local Development
 
