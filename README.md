@@ -1,6 +1,6 @@
-# GitOps Demo with ArgoCD and Java Application
+# GitOps Demo: ArgoCD + Kubernetes + CI/CD
 
-This repository demonstrates a complete GitOps workflow using ArgoCD for continuous deployment of a Java Spring Boot application.
+This repository demonstrates a complete GitOps workflow using ArgoCD for continuous deployment of a Java Spring Boot application on Kubernetes.
 
 ## 🏗️ Architecture Overview
 
