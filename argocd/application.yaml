@@ -10,7 +10,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/armansheikhhosseini/test-gitActions.git
+    repoURL: https://github.com/armansheikhhosseini/gitops-argocd-demo.git
     targetRevision: HEAD
     path: dev
 

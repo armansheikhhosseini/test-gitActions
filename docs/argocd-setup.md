@@ -133,7 +133,7 @@ argocd repo add https://github.com/username/repo.git --username myuser --passwor
 2. Fill in application details:
    - Application Name: `myapp-argo-application`
    - Project: `default`
-   - Repository URL: `https://github.com/armansheikhhosseini/test-gitActions.git`
+   - Repository URL: `https://github.com/armansheikhhosseini/gitops-argocd-demo.git`
    - Path: `dev`
    - Cluster: `https://kubernetes.default.svc`
    - Namespace: `myappmin`
@@ -145,7 +145,7 @@ argocd repo add https://github.com/username/repo.git --username myuser --passwor
 ```bash
 # Create application
 argocd app create myapp-argo-application \
-  --repo https://github.com/armansheikhhosseini/test-gitActions.git \
+  --repo https://github.com/armansheikhhosseini/gitops-argocd-demo.git \
   --path dev \
   --dest-server https://kubernetes.default.svc \
   --dest-namespace myappmin \
@@ -214,7 +214,7 @@ argocd app hard-refresh myapp-argo-application
 argocd repo list
 
 # Test repository connection
-argocd repo get https://github.com/armansheikhhosseini/test-gitActions.git
+argocd repo get https://github.com/armansheikhhosseini/gitops-argocd-demo.git
 ```
 
 #### 3. Resource Sync Issues
